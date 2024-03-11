@@ -12,9 +12,21 @@ namespace Login_hash
 {
     public partial class Form1 : Form
     {
+        public object Crypto { get; private set; }
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntLogin_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
