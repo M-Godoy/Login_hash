@@ -183,6 +183,7 @@
             this.btnRegistro.TabIndex = 9;
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // txbSenhaRegistro
             // 
