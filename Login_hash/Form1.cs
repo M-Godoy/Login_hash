@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace Login_hash
@@ -26,7 +27,8 @@ namespace Login_hash
 
         private void bntLogin_Click(object sender, EventArgs e)
         {
-           
+            string usuario = txtUsuarioLogin.Text;
+            string senha = Crypto.sha256encrypt(txtSenhaLogin.Text);
         }
     }
 }
