@@ -91,6 +91,7 @@
             // 
             this.txtSenhaLogin.Location = new System.Drawing.Point(271, 260);
             this.txtSenhaLogin.Name = "txtSenhaLogin";
+            this.txtSenhaLogin.PasswordChar = '*';
             this.txtSenhaLogin.Size = new System.Drawing.Size(284, 20);
             this.txtSenhaLogin.TabIndex = 3;
             // 
@@ -151,6 +152,7 @@
             // 
             this.txbConfirmar.Location = new System.Drawing.Point(355, 239);
             this.txbConfirmar.Name = "txbConfirmar";
+            this.txbConfirmar.PasswordChar = '*';
             this.txbConfirmar.Size = new System.Drawing.Size(284, 20);
             this.txbConfirmar.TabIndex = 12;
             // 
