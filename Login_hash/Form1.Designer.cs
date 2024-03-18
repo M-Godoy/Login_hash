@@ -189,6 +189,7 @@
             // 
             this.txbSenhaRegistro.Location = new System.Drawing.Point(355, 201);
             this.txbSenhaRegistro.Name = "txbSenhaRegistro";
+            this.txbSenhaRegistro.PasswordChar = '*';
             this.txbSenhaRegistro.Size = new System.Drawing.Size(284, 20);
             this.txbSenhaRegistro.TabIndex = 8;
             // 
