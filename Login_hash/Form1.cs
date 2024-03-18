@@ -48,11 +48,13 @@ namespace Login_hash
                 
             }
 
+            label1.Text = Crypto.sha256encrypt(txtSenhaLogin.Text);
         }
    
         private void btnRegistro_Click(object sender, EventArgs e)
         {
             AdicionarUsuario(txbUsuarioRegistro.Text, txbSenhaRegistro.Text, txbConfirmar.Text);
+            label2.Text = Crypto.sha256encrypt(txtSenhaLogin.Text);
         }
         //método privado que não retorna nenhum valor e espera três strings como parâmetros;
         private void AdicionarUsuario(string _nomeusuario, string _senha, string _confirmarsenha)
@@ -63,15 +65,15 @@ namespace Login_hash
 
             if (senhaR != confirmar)
             {
-                MessageBox.Show("Senha não confere");
+                MessageBox.Show("Senha não confere.");
             }
-            else if (senhaR.Length < 8)//verifica a quantidade de caracteres dessa string;
+            else if (VerificarSenha(senhaR))//verifica a quantidade de caracteres dessa string;
             {
-                MessageBox.Show("A senha deve conter no mínimo 8 caracteres");
+                MessageBox.Show("A senha não é forte o suficiente.");
             }
             else if (usuarioR.Length <1)//verifica a quantidade de caracteres dessa string;
             {
-                MessageBox.Show("Você deve informar um usuário");
+                MessageBox.Show("Você deve informar um usuário.");
             }
             else
             {
@@ -84,5 +86,27 @@ namespace Login_hash
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        static bool VerificarSenha(string senha)
+        {
+            // Critérios para uma senha forte
+            int comprimentoMinimo = 10;
+            bool temMaiuscula = senha.Any(char.IsUpper);
+            bool temMinuscula = senha.Any(char.IsLower);
+            bool temNumero = senha.Any(char.IsDigit);
+            bool temCaracterEspecial = senha.Any(ch => !char.IsLetterOrDigit(ch));
+
+            // Verificar o comprimento
+            if (senha.Length < comprimentoMinimo)
+            {
+                return false;
+            }
+
+            // Verificar outros critérios
+            return temMaiuscula && temMinuscula && temNumero && temCaracterEspecial;
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Login = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.bntLogin = new System.Windows.Forms.Button();
             this.txtSenhaLogin = new System.Windows.Forms.TextBox();
             this.txtUsuarioLogin = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.txbUsuarioRegistro = new System.Windows.Forms.TextBox();
             this.lblSenhaRegistro = new System.Windows.Forms.Label();
             this.lblUsuarioRegistro = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Login.SuspendLayout();
             this.Registro.SuspendLayout();
@@ -62,6 +64,7 @@
             // 
             // Login
             // 
+            this.Login.Controls.Add(this.label1);
             this.Login.Controls.Add(this.bntLogin);
             this.Login.Controls.Add(this.txtSenhaLogin);
             this.Login.Controls.Add(this.txtUsuarioLogin);
@@ -75,6 +78,16 @@
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
             this.Login.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(-3, 444);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Senha-Criptografada";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // bntLogin
             // 
@@ -124,6 +137,7 @@
             // 
             // Registro
             // 
+            this.Registro.Controls.Add(this.label2);
             this.Registro.Controls.Add(this.txbEmail);
             this.Registro.Controls.Add(this.txbConfirmar);
             this.Registro.Controls.Add(this.lblEmail);
@@ -222,6 +236,15 @@
             this.lblUsuarioRegistro.TabIndex = 5;
             this.lblUsuarioRegistro.Text = "Usuário";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 444);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Senha-Criptografada";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +281,8 @@
         private System.Windows.Forms.TextBox txbConfirmar;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblConfirmar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
