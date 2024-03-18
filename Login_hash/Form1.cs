@@ -75,7 +75,7 @@ namespace Login_hash
             }
             else
             {
-                //está adicionando um novo usuário ao dicionário 'usuarios', onde o nome do usuário é a chave e a senha, criptografada com SHA-256, é o valor associado a essa chave;
+                //está adicionando um novo usuário ao dicionário, onde o 'nome do usuário' é a chave e a 'senha', criptografada com SHA-256, é o valor associado a chave;
                 usuarios[_nomeusuario] = Crypto.sha256encrypt(_senha);
                 txbUsuarioRegistro.Text = String.Empty;
                 txbSenhaRegistro.Text = String.Empty;
