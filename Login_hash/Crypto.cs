@@ -21,6 +21,7 @@ namespace Login_Hash
         //}
         public static string sha256encrypt(string frase)
         {
+            //recebe uma frase e retorna o hash na sua forma hexadecimal;
             UTF8Encoding encoder = new UTF8Encoding();
             SHA256Managed sha256hasher = new SHA256Managed();
             byte[] hashedDataBytes = sha256hasher.ComputeHash(encoder.GetBytes(frase));
