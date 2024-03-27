@@ -67,9 +67,25 @@ namespace Login_hash
             {
                 MessageBox.Show("Senha não confere.");
             }
-            else if (VerificarSenha(senhaR))//verifica a quantidade de caracteres dessa string;
+            else if (senhaR.Length<10)//verifica a quantidade de caracteres dessa string;
             {
-                MessageBox.Show("A senha não é forte o suficiente.");
+                MessageBox.Show("A senha tem que ter no mínimo 10 caracteres.");
+            }
+            else if (!senhaR.Any(c => char.IsDigit(c)))
+            {
+                MessageBox.Show("A senha deve conter números.");
+            }
+            else if (!senhaR.Any(c => char.IsUpper(c)))
+            {
+                MessageBox.Show("A senha deve conter Letras maiúsculas.");
+            }
+            else if (!senhaR.Any(c => char.IsLower(c)))
+            {
+                MessageBox.Show("A senha deve conter letras minusculas.");
+            }
+            else if (!senhaR.Any(c => char.IsSymbol(c)))
+            {
+                MessageBox.Show("A senha deve conter caracteres especiais.");
             }
             else if (usuarioR.Length <1)//verifica a quantidade de caracteres dessa string;
             {
@@ -90,23 +106,23 @@ namespace Login_hash
         {
 
         }
-        static bool VerificarSenha(string senha)
-        {
-            // Critérios para uma senha forte
-            int comprimentoMinimo = 10;
-            bool temMaiuscula = senha.Any(char.IsUpper);
-            bool temMinuscula = senha.Any(char.IsLower);
-            bool temNumero = senha.Any(char.IsDigit);
-            bool temCaracterEspecial = senha.Any(ch => !char.IsLetterOrDigit(ch));
+        //    static bool VerificarSenha(string senha)
+        //    {
+        //        // Critérios para uma senha forte
+        //        int comprimentoMinimo = 10;
+        //        bool temMaiuscula = senha.Any(char.IsUpper);
+        //        bool temMinuscula = senha.Any(char.IsLower);
+        //        bool temNumero = senha.Any(char.IsDigit);
+        //        bool temCaracterEspecial = senha.Any(ch => !char.IsLetterOrDigit(ch));
 
-            // Verificar o comprimento
-            if (senha.Length < comprimentoMinimo)
-            {
-                return false;
-            }
+        //        // Verificar o comprimento
+        //        if (senha.Length < comprimentoMinimo)
+        //        {
+        //            return false;
+        //        }
 
-            // Verificar outros critérios
-            return temMaiuscula && temMinuscula && temNumero && temCaracterEspecial;
-        }
+        //        // Verificar outros critérios
+        //        return temMaiuscula && temMinuscula && temNumero && temCaracterEspecial;
+        //    }
     }
 }
