@@ -40,7 +40,7 @@ namespace Login_hash
                 txtUsuarioLogin.Text = String.Empty;
                 txtSenhaLogin.Text = String.Empty;
                 MessageBox.Show("Login realizado com sucesso !");
-                
+                label1.Text = Crypto.sha256encrypt(txtSenhaLogin.Text);
             }
             else
             {
@@ -48,13 +48,13 @@ namespace Login_hash
                 
             }
 
-            label1.Text = Crypto.sha256encrypt(txtSenhaLogin.Text);
+            
         }
    
         private void btnRegistro_Click(object sender, EventArgs e)
         {
             AdicionarUsuario(txbUsuarioRegistro.Text, txbSenhaRegistro.Text, txbConfirmar.Text);
-            label2.Text = Crypto.sha256encrypt(txtSenhaLogin.Text);
+            
         }
         //método privado que não retorna nenhum valor e espera três strings como parâmetros;
         private void AdicionarUsuario(string _nomeusuario, string _senha, string _confirmarsenha)
@@ -99,6 +99,7 @@ namespace Login_hash
                 txbSenhaRegistro.Text = String.Empty;
                 txbConfirmar.Text = String.Empty;
                 MessageBox.Show("Registro realizado com sucesso!");
+                label2.Text = Crypto.sha256encrypt(txbSenhaRegistro.Text);
             }
         }
 
